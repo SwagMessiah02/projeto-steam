@@ -1,0 +1,35 @@
+<!-- Arquivo: views/emprestimos/index.ejs -->
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8" />
+            <title>Empréstimos</title>
+            <link rel="stylesheet" href="/css/styles.css" />
+        </head>
+        <body>
+            <h1>Empréstimos / Trocas</h1>
+            <p><a href="/emprestimos/novo">Registrar empréstimo</a> | <a href="/jogos">Jogos</a> | <a
+                href="/amigos">Amigos</a></p>
+            <table>
+                <thead><tr><th>ID</th><th>Jogo</th><th>Quem
+                    pegou</th><th>Início</th><th>Fim</th><th>Ações</th></tr></thead>
+                <tbody>
+                    <% emprestimos.forEach(e => { %>
+                        <tr>
+                            <td><%= e.id %></td>
+                            <td><%= e.jogo ? e.jogo.titulo : '—' %></td>
+                            <td><%= e.amigo ? e.amigo.nome : '—' %></td>
+                            <td><%= e.dataInicio %></td>
+                            <td><%= e.dataFim ? e.dataFim : 'em aberto' %></td>
+                            <td>
+                                <form action="/emprestimos/excluir/<%= e.id %>" method="POST" style="display:inline;">
+                                    <button type="submit">Excluir</button>
+                                </form>
+                            </form>
+                            </td>
+                        </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </body>
+</html >

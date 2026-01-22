@@ -1,0 +1,39 @@
+<!-- Arquivo: views/emprestimos/novo.ejs -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Novo Empréstimo</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <h1>Registrar Empréstimo</h1>
+    <form action="/emprestimos/novo" method="POST">
+        <p>
+            <label>Jogo:</label><br />
+            <select name="jogoId" required>
+                <% jogos.forEach(j=> { %>
+                    <option value="<%= j.id %>">
+                        <%= j.titulo %> (<%= j.plataforma %>)
+                    </option>
+                    <% }) %>
+            </select>
+        </p>
+        <p>
+            <label>Amigo que pegou:</label><br />
+            <select name="amigoId" required <% amigos.forEach(a=> { %>
+                <option value="<%= a.id %>">
+                    <%= a.nome %> (<%= a.email %>)
+                </option>
+                <% }) %>
+            </select>
+        </p>
+        <p><label>Data de início:</label><br /><input name="dataInicio" placeholder="AAAA-MM-DD" required /></p>
+        <p><label>Data de fim (opcional):</label><br /><input name="dataFim" placeholder="AAAA-MMDD" /></p>
+        <p><button type="submit">Salvar</button> <a href="/emprestimos">Cancelar</a></p>
+    </form>
+</body>
+
+</html>
