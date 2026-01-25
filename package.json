@@ -16,11 +16,12 @@
     "dotenv": "^17.2.3",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
+    "pdfkit": "^0.17.2",
     "express-oauth2-jwt-bearer": "^1.7.4",
     "jsonwebtoken": "^9.0.2",
     "jwks-rsa": "^3.2.0",
     "sequelize": "^6.37.7",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.5"

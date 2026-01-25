@@ -16,11 +16,12 @@ const usuarioController = new UsuarioController();
 //router.post('/register', usuarioController.registro);
 //router.get('/login', usuarioController.login);
 
-//router.get('/amigos/json', customJwtMiddleware, amigoController.exibirJson);
+router.get('/amigos/pdf', amigoController.gerarPdf);
 router.get('/amigos/json', amigoController.exibirJson);
 router.get('/jogos/json', jogosController.exibirJson);
 router.get('/emprestimos/json', emprestimoController.exibirJson);
 router.get('/amigos', amigoController.exibirAmigos);
+router.get('/amigos/pdf', amigoController.gerarPdf);
 router.get('/amigos/novo', amigoController.exibirAdicionarAmigos);
 router.get('/amigos/editar/:id', amigoController.exibirEditarAmigo);
 router.post('/amigos/novo', amigoController.adicionarAmigos);
