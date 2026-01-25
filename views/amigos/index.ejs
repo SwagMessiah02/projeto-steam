@@ -10,7 +10,13 @@
 
 <body>
     <h1>Amigos</h1>
-    <p><a href="/amigos/novo">Cadastrar novo amigo</a> | <a href="/jogos">Ver jogos</a></p>
+
+    <p>
+        <a href="/amigos/novo">Cadastrar novo amigo</a> |
+        <a href="/amigos/pdf" target="_blank">Gerar PDF</a> |
+        <a href="/jogos">Ver jogos</a>
+    </p>
+
     <table>
         <thead>
             <tr>
@@ -21,17 +27,11 @@
             </tr>
         </thead>
         <tbody>
-            <% amigos.forEach(a=> { %>
+            <% amigos.forEach(a => { %>
                 <tr>
-                    <td>
-                        <%= a.id %>
-                    </td>
-                    <td>
-                        <%= a.nome %>
-                    </td>
-                    <td>
-                        <%= a.email %>
-                    </td>
+                    <td><%= a.id %></td>
+                    <td><%= a.nome %></td>
+                    <td><%= a.email %></td>
                     <td>
                         <a href="/amigos/editar/<%= a.id %>">Editar</a>
                         <form action="/amigos/excluir/<%= a.id %>" method="POST" style="display:inline;">
@@ -39,8 +39,9 @@
                         </form>
                     </td>
                 </tr>
-                <% }) %>
+            <% }) %>
         </tbody>
     </table>
+
 </body>
 </html>
