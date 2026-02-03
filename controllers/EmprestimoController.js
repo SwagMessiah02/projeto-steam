@@ -3,6 +3,7 @@ const AmigoService = require('../services/AmigoService.js');
 const JogosService = require('../services/JogosService.js');
 const { Amigo, Jogo, Emprestimo } = require('../models');
 const PDFDocument = require('pdfkit');
+
 class EmprestimoController {
     constructor () {
         this.emprestimoService = new EmprestimoService(Emprestimo);
