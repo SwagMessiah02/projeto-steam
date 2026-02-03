@@ -1,6 +1,6 @@
-const PDFDocument = require('pdfkit');
 const AmigoService = require('../services/AmigoService.js');
 const { Amigo } = require('../models');
+const PDFDocument = require('pdfkit');
 
 class AmigoController {
     constructor () {
