@@ -1,4 +1,3 @@
-# Trabaio Manel
 
 ## Como rodar:
 
