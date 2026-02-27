@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 require("dotenv/config")
 
 const app = express();
-const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,4 +18,4 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => res.redirect('/amigos'));
 
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}`));
