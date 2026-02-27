@@ -1,14 +1,12 @@
 FROM node:20-alpine
 
-WORKDIR /app
+WORKDIR /server
 
-COPY package*.json ./
-RUN npm install
 COPY . .
 
-RUN npx sequelize db:migrate && \
-    npx sequelize db:seed:all
+RUN npm install && \
+    chmod +x db-setup.sh
 
-EXPOSE 3000
+EXPOSE 3000/tcp
 
-CMD ["npm", "start"]
+CMD ["sh", "db-setup.sh"]
