@@ -1,3 +1,4 @@
 node_modules
 database-dev.sqlite
 package-lock.json
+.env
